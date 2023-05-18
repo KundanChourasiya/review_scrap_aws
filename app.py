@@ -8,13 +8,13 @@ logging.basicConfig(filename="scrapper.log" , level=logging.INFO)
 
 app = Flask(__name__)
 
-@app.route("/", methods = ['GET'])
 @cross_origin
+@app.route("/", methods = ['GET'])
 def homepage():
     return render_template("index.html")
 
-@app.route("/review" , methods = ['POST' , 'GET'])
 @cross_origin
+@app.route("/review" , methods = ['POST' , 'GET'])
 def index():
     if request.method == 'POST':
         try:
